@@ -1,0 +1,15 @@
+{
+  "name": "keep-me-alive",
+  "description": "Keep Me Alive — periodic pings so threads of work don't drop",
+  "owner": {
+    "name": "Keep Me Alive",
+    "url": "https://github.com/Keep-Me-Alive"
+  },
+  "plugins": [
+    {
+      "name": "keep-me-alive",
+      "source": "./plugins/keep-me-alive",
+      "description": "Track follow-ups, chases and pings that must not be forgotten, through the Keep Me Alive MCP connector."
+    }
+  ]
+}

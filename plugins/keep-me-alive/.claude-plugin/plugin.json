@@ -1,0 +1,12 @@
+{
+  "name": "keep-me-alive",
+  "displayName": "Keep Me Alive",
+  "description": "Track follow-ups, chases and pings that must not be forgotten, through the Keep Me Alive MCP connector.",
+  "author": {
+    "name": "Keep Me Alive",
+    "url": "https://github.com/Keep-Me-Alive"
+  },
+  "homepage": "https://github.com/Keep-Me-Alive/ai-plugins",
+  "repository": "https://github.com/Keep-Me-Alive/ai-plugins",
+  "keywords": ["reminders", "follow-ups", "tasks", "mcp", "productivity"]
+}

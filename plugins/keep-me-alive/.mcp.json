@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "keep-me-alive": {
+      "type": "http",
+      "url": "https://api.keepmealive.mskuibida.com/mcp"
+    }
+  }
+}
