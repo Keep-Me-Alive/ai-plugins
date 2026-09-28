@@ -30,6 +30,10 @@ Field names on the wire are `snake_case`; the structured result is `camelCase`
 Neither `due` nor `recur` → an **undated** thread, which is a deliberate state: it appears in
 the morning digest every day until it is completed.
 
+This is the tool for every reminder the user asks for, however soon. There is no minimum lead
+time and no rounding: a `due` two minutes out is stored as given, and the push goes out when it
+falls due unless quiet hours hold it.
+
 ### `add_comment`
 
 `thread_id` (required), `body` (1–8000). Append-only, versionless, never conflicts. The most

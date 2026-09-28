@@ -11,6 +11,8 @@ absolute instant with an offset.
 
 | The user says | You send |
 | --- | --- |
+| "in 2 minutes" | now + 2 min, with offset — a countdown is a thread like any other, not a timer |
+| "at 7" | whichever of 07:00 and 19:00 local comes next, unless the context says otherwise; say which |
 | "in an hour" | now + 1h, in their zone, with offset |
 | "tomorrow at 10" | 10:00 local tomorrow |
 | "Friday" | the next Friday; pick a sane hour (their digest hour or 09:00) and say which |

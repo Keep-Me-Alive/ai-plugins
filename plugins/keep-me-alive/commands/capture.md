@@ -1,5 +1,5 @@
 ---
-description: Quickly log something to track with Keep Me Alive, without asking for details first
+description: Quickly log something to track or be reminded of with Keep Me Alive, a two-minute countdown included, without asking for details first
 argument-hint: [what to track]
 ---
 

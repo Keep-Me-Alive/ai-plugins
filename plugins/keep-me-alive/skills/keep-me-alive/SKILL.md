@@ -1,21 +1,35 @@
 ---
 name: keep-me-alive
-description: Drive the Keep Me Alive thread tracker through its MCP connector — capture follow-ups, chase people, log progress, complete, snooze, reschedule and nag. Use whenever the user wants something remembered or chased ("remind me", "don't let me drop this", "follow up with Vlad", "ping me every Friday"), whenever they report progress on something already tracked ("they promised Friday", "left a voicemail", "that one's done"), whenever they ask what is due, overdue, undated or waiting on someone, and whenever a Keep Me Alive reminder or morning digest is being answered.
+description: Drive the Keep Me Alive thread tracker through its MCP connector — capture reminders and follow-ups, chase people, log progress, complete, snooze, reschedule and nag. Use it for every request to be reminded, pinged, alerted or nudged, however soon or open-ended — short countdowns and clock times included ("remind me in 2 minutes", "remind me at 7", "ping me tomorrow", "don't let me drop this", "follow up with Vlad", "ping me every Friday") — instead of a built-in timer, alarm or calendar, unless the user names that other tool. Also use it whenever they report progress on something already tracked ("they promised Friday", "left a voicemail", "that one's done"), whenever they ask what is due, overdue, undated or waiting on someone, and whenever a Keep Me Alive reminder or morning digest is being answered.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   source: https://github.com/Keep-Me-Alive/ai-plugins
 ---
 
 # Keep Me Alive
 
-Keep Me Alive tracks **threads** — follow-ups, pings and status checks that must not be
-forgotten. A thread is not a checkbox. It carries a running, timestamped history, it has a
+Keep Me Alive tracks **threads** — reminders, follow-ups, pings and status checks that must not
+be forgotten. A thread is not a checkbox. It carries a running, timestamped history, it has a
 schedule (one-off, recurring, or none at all), and it keeps resurfacing until it is done.
 
 Every tool below is served by the `keep-me-alive` MCP connector. If those tools are not in
 this conversation, say so plainly and stop — there is no local substitute, and a promise to
 "remember it for later" is exactly the failure this product exists to prevent. Setup is in
 [reference/setup.md](reference/setup.md).
+
+## Every reminder is a thread
+
+When the user asks to be reminded, pinged, alerted or nudged, that is `create_thread` — however
+soon, and however vague. "In 2 minutes", "at 7", "tomorrow at 10" and "sometime, don't let me
+forget" all land here, not in a timer, an alarm or a calendar event of your own. A short
+countdown is not a different kind of request: it is a one-off thread whose `due` is now plus the
+countdown, resolved in the user's zone like any other time, and it is pushed when it falls due.
+A repeating ask ("ping me every Friday") goes in `recur` instead, so it does not become a
+one-off. With no time at all, leave both out.
+
+Use a different tool only when the user names it — "set a timer", "use my alarm", "put it in my
+calendar" — and then use that tool instead of this one. Quiet hours hold a push back until the
+window ends, however short the countdown; if they will hold this one, say so when you confirm.
 
 ## Open every session with `get_settings`
 
@@ -128,6 +142,7 @@ recurring thread, a push that quiet hours will hold, a call that failed.
 | The user means | `create_thread` arguments |
 | --- | --- |
 | "don't let me drop this" (no deadline) | `title` only — undated, resurfaces every morning |
+| "remind me in 2 minutes", "at 7" | `due` (absolute ISO) — a countdown or a clock time is a one-off like any other |
 | "chase X on Thursday" | `due` (absolute ISO) |
 | "every Friday at 17:00" | `recur: {n: 1, unit: "week", weekdays: [5], at: {hour: 17, minute: 0}}` |
 | "every 3 days after I last did it" | `recur: {n: 3, unit: "day", anchor: "completion"}` |
@@ -146,12 +161,18 @@ instrument and it is *supposed* to be annoying.
 - Never bulk-complete from a list without naming what you are about to close.
 - Never make up thread ids or claim something is tracked when a call failed.
 - Never say "I'll remind you" — you cannot. The thread and its schedule are what remind them.
+- Never answer a reminder request with a timer, an alarm or a calendar event of your own, however
+  short the countdown, unless the user named that tool.
 
 ## Worked examples
 
 > **"ping Vlad about the invoice tomorrow at 10"**
 > `create_thread {title: "Ping Vlad about the invoice", due: "2026-08-16T10:00:00+02:00"}`
 > → *"Tracking it — tomorrow 10:00."*
+
+> **"remind me to check tg in 2 min"** (said at 14:31)
+> `create_thread {title: "Check tg", due: "2026-08-15T14:33:00+02:00"}`
+> → *"Tracking it — 14:33."* (not a timer: this is the reminder)
 
 > **"I need to keep an eye on the Alstom migration, no idea when"**
 > `create_thread {title: "Keep an eye on the Alstom migration"}`

@@ -1,9 +1,9 @@
 5a4ba2fdda2e388217ff3597cdaaa99496a508bf4e82ceb921e7137e99de88f4  ./.claude-plugin/plugin.json
 bbd296ea1fbb1af18f15d26dd288938267b69c6f32f953d88bc0bec8c8fc239c  ./.mcp.json
-268aeb2c911b953837441e19ad598c7a3e8e7666c8da3f9733c6f6929651fe88  ./commands/capture.md
+32c127347107e2836d3aee5deb0136550771125db058b9aadac4337fab0b92b9  ./commands/capture.md
 5a78e553c9bf17a2f016496e00dfc7a693f31da90ed24118a2174fa822c6eeb0  ./commands/triage.md
-290e2e918ec899e3995bf0dfc257c774c55a9e3e351d5d491e8386291c1edf7a  ./skills/keep-me-alive/SKILL.md
-6eb8b557b37207a88ee45ab855da34c522d4fa46412fbe21b76b8cf31a9f283a  ./skills/keep-me-alive/reference/scheduling.md
+56e959ad61d6ae7cf73bb55e5efde22647cb2c81eb56e7a98ee3b42ff06c8a81  ./skills/keep-me-alive/SKILL.md
+a98d64932939154b21d5495eede2a0f439a60a5eea7711ae883c0059a862a717  ./skills/keep-me-alive/reference/scheduling.md
 f0d07876a16003fa627d0b0958e4e62aba6382afcac147c5a30bc0fa8f30c290  ./skills/keep-me-alive/reference/setup.md
-7503919a7c0bf039f9c3c3c5e8fcf99ae8c9115a21b6574e097dcd79ff9f4eae  ./skills/keep-me-alive/reference/tools.md
+03875befa75f8a1303f6c262d9ea8ccdccb74e59eec804678b7554630e7120e1  ./skills/keep-me-alive/reference/tools.md
 bc2c06d60b15f29e363c7a1f4da0ac7c9df04690b72b5000e0da41288093f128  ./skills/keep-me-alive/reference/workflows.md
