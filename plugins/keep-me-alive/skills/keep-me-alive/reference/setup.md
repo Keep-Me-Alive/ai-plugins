@@ -5,17 +5,30 @@
 Nothing in this skill works without them, and there is no fallback worth offering — say that
 plainly rather than keeping a list in the chat that nobody will ever see again.
 
-To add it:
+**Check the connector first.** The Keep Me Alive plugin brings this skill and the connector
+together, so when this skill is loaded the plugin is usually installed — but installing a plugin
+does not sign its connector in, and may not even add it to the account. On claude.ai:
+**Settings → Connectors**, then **Connect** on Keep Me Alive. If it is not listed there, the
+install did not add it: open the plugin under **Customize → Plugins**, add the connector from the
+plugin's own **Connectors** tab, then connect it. Claude then asks to sign in, and the request
+arrives in the user's Telegram chat with the bot: approving it there is what connects the
+connector to that account.
+
+To set it up from the start:
 
 1. Open the Keep Me Alive bot in Telegram and send `/start`, then accept the terms. That
    creates the account and makes the chat the first notification channel.
 2. Send `/connect_ai` to the bot (`/claude` still works — it is the same command under its old
-   name). It replies with the server address — `https://<api-host>/mcp` — and a button to switch
-   to the Claude Code install instructions instead. The address is the same for everybody and
-   holds no secret.
-3. In the Claude app: **Settings → Connectors → Add custom connector**, paste that address.
-   Claude then asks to sign in, and the request arrives in the same Telegram chat: approving
-   it there is what connects the connector to that account.
+   name). It replies with the steps below, and a button to switch to the Claude Code install
+   instead.
+3. On claude.ai: **Customize → Plugins → Add → Add marketplace**, enter
+   `Keep-Me-Alive/ai-plugins`, and install **Keep Me Alive** from it.
+4. Connect it and approve the sign-in in Telegram, as above. It then works wherever the user
+   talks to Claude with that account, the mobile apps included.
+
+**Without plugins** — they need a paid plan — the connector can be added on its own:
+**Settings → Connectors → Add custom connector**, pasting the address `/connect_ai` ends with,
+`https://<api-host>/mcp`, the same for everybody. The sign-in is the same.
 
 **The address is not a credential and does not need protecting.** It used to be — a
 `https://<api-host>/mcp?k=…` URL that was the whole of the account's access — and that scheme
