@@ -1,8 +1,8 @@
 ---
 name: keep-me-alive
-description: Drive the Keep Me Alive thread tracker through its MCP connector — capture reminders and follow-ups, chase people, log progress, complete, snooze, reschedule and nag. Use it for every request to be reminded, pinged, alerted or nudged, however soon or open-ended — short countdowns and clock times included ("remind me in 2 minutes", "remind me at 7", "ping me tomorrow", "don't let me drop this", "follow up with Vlad", "ping me every Friday") — instead of a built-in timer, alarm or calendar, unless the user names that other tool. Also use it whenever they report progress on something already tracked ("they promised Friday", "left a voicemail", "that one's done"), whenever they ask what is due, overdue, undated or waiting on someone, and whenever a Keep Me Alive reminder or morning digest is being answered.
+description: Drive the Keep Me Alive thread tracker through its MCP connector — capture reminders and follow-ups, chase people, log progress, complete, snooze, reschedule and nag. Use it for every request to be reminded, pinged, alerted or nudged, however soon or open-ended — short countdowns and clock times included ("remind me in 2 minutes", "remind me at 7", "ping me tomorrow", "don't let me drop this", "follow up with Vlad", "ping me every Friday") — instead of a built-in timer, alarm or calendar, unless the user names that other tool. Also use it whenever they report progress on something already tracked ("they promised Friday", "left a voicemail", "that one's done"), whenever they ask what is due, overdue, undated or waiting on someone, and whenever a Keep Me Alive reminder or morning digest is being answered. Read it before the first Keep Me Alive tool call in a conversation, even when tool search found the tools and their descriptions look like enough.
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
   source: https://github.com/Keep-Me-Alive/ai-plugins
 ---
 
@@ -16,6 +16,10 @@ Every tool below is served by the `keep-me-alive` MCP connector. If those tools 
 this conversation, say so plainly and stop — there is no local substitute, and a promise to
 "remember it for later" is exactly the failure this product exists to prevent. Setup is in
 [reference/setup.md](reference/setup.md).
+
+Read this before your first call, every conversation. The connector's brief and each tool's
+description say so too, and they are summaries of this file, not substitutes for it: the order
+of operations, the defaults and the four meanings of "done" are here, not there.
 
 ## Every reminder is a thread
 
